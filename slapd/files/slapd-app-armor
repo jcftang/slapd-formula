@@ -1,0 +1,9 @@
+# Site-specific additions and overrides for usr.sbin.slapd.
+# For more details, please see /etc/apparmor.d/local/README.
+
+/etc/ssl/private/ r,
+/etc/ssl/private/* r,
+/etc/ssl/certs/ r,
+/etc/ssl/certs/* r,
+/etc/ssl/local/certs/ r,
+/etc/ssl/local/certs/* r,

@@ -1,0 +1,8 @@
+{% set slapd = pillar.get('slapd', {}) -%}
+dn: ou=people,{{ slapd.get("dc", "dc=foo,dc=bar") }}
+objectClass: organizationalUnit
+ou: people
+
+dn:  ou=groups,{{ slapd.get("dc", "dc=foo,dc=bar") }}
+objectClass: organizationalUnit
+ou: groups

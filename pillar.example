@@ -1,0 +1,15 @@
+slapd:
+  host: 192.168.251.101
+  password: password
+  organisation: acme
+  domain: foo.bar
+  dc: dc=foo,dc=bar
+  rootbinddn: cn=admin,dc=foo,dc=bar
+  slapd_cn: foo.bar
+  slapd_basepath: /etc/ssl/local/certs
+  slapd_cert_days: 3560
+  slapd_cert_country: IE
+  slapd_cert_state: Dublin
+  slapd_cert_location: Dublin
+  slapd_cert_org: Quux Corp
+  slapd_cert_email: nops@foo.bar

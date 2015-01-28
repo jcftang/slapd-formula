@@ -1,0 +1,16 @@
+{% set slapd = salt['grains.filter_by']({
+   'Ubuntu': {
+       'slapd_pkg': 'slapd',
+       'server_pkgs': ['ldap-utils', 'ldapscripts'],
+       'pam_pkgs': ['ldap-auth-config', 'libnss-ldap', 'nscd'],
+       'configfile': '/etc/ldap.conf',
+       'ldap_configfile': '/etc/ldap/ldap.conf',
+    },
+    'Debian': {
+       'slapd_pkg': 'slapd',
+       'server_pkgs': ['ldap-utils', 'ldapscripts'],
+       'pam_pkgs': ['libnss-ldap', 'nscd'],
+       'configfile': '/etc/libnss-ldap.conf',
+       'ldap_configfile': '/etc/ldap/ldap.conf',
+    }
+}, grain='os', merge=salt['pillar.get']('slapd')) %}

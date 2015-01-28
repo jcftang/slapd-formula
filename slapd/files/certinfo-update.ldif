@@ -1,0 +1,16 @@
+{% set slapd = pillar.get('slapd', {}) -%}
+dn: cn=config
+replace: olcTLSCACertificateFile
+olcTLSCACertificateFile: {{ slapd.get("slapd_basepath") }}/{{ slapd.get("slapd_cn") }}.crt
+-
+replace: olcTLSCertificateFile
+olcTLSCertificateFile: {{ slapd.get("slapd_basepath") }}/{{ slapd.get("slapd_cn") }}.crt
+-
+replace: olcTLSCertificateKeyFile
+olcTLSCertificateKeyFile: {{ slapd.get("slapd_basepath") }}/{{ slapd.get("slapd_cn") }}.key
+-
+replace: olcTLSCRLCheck
+olcTLSCRLCheck: none
+-
+replace: olcTLSVerifyClient
+olcTLSVerifyClient: never

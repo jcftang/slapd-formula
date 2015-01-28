@@ -1,0 +1,1 @@
+{% set slapd = pillar.get('slapd', {}) -%}{{ slapd.get('password', 'password') }}
